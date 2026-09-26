@@ -51,6 +51,21 @@ namespace ai
     
     // arms talents
     MELEE_ACTION(CastMortalStrikeAction, "mortal strike");
+
+#ifdef MANGOSBOT_ZERO
+    class CastMasterStrikeAction : public CastMeleeSpellAction
+    {
+    public:
+        CastMasterStrikeAction(PlayerbotAI* ai) : CastMeleeSpellAction(ai, "master strike") {}
+
+        bool isPossible() override
+        {
+            if (!CastMeleeSpellAction::isPossible())
+                return false;
+            return bot->GetWeaponForAttack(BASE_ATTACK, true, true) != nullptr;
+        }
+    };
+#endif
     BUFF_ACTION_U(CastSweepingStrikesAction, "sweeping strikes", CastBuffSpellAction::isUseful() && MeleeOpportunity(ai) && SafeMeleeTargetCount(ai, 5.0f) >= 2);
     // arms talents 3.3.5
     class CastBladestormAction : public CastBuffSpellAction

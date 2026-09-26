@@ -252,6 +252,9 @@ namespace ai
                     creators["commanding shout"] = [](PlayerbotAI* ai) { return new CastCommandingShoutAction(ai); };
                     creators["retaliation"] = [](PlayerbotAI* ai) { return new CastRetaliationAction(ai); };
                     creators["mortal strike"] = [](PlayerbotAI* ai) { return new CastMortalStrikeAction(ai); };
+#ifdef MANGOSBOT_ZERO
+                    creators["master strike"] = [](PlayerbotAI* ai) { return new CastMasterStrikeAction(ai); };
+#endif
                     creators["sweeping strikes"] = [](PlayerbotAI* ai) { return new CastSweepingStrikesAction(ai); };
                     creators["intercept"] = [](PlayerbotAI* ai) { return new CastInterceptAction(ai); };
                     creators["whirlwind"] = [](PlayerbotAI* ai) { return new CastWhirlwindAction(ai); };
