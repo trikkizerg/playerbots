@@ -361,6 +361,16 @@ namespace ai
                     creators["create soulstone"] = [](PlayerbotAI* ai) { return new CastCreateSoulstoneAction(ai); };
                     creators["create firestone"] = [](PlayerbotAI* ai) { return new CastCreateFirestoneAction(ai); };
                     creators["create spellstone"] = [](PlayerbotAI* ai) { return new CastCreateSpellstoneAction(ai); };
+#ifdef MANGOSBOT_ZERO
+                    creators["create felstone"] = [](PlayerbotAI* ai) { return new CastCreateFelstoneAction(ai); };
+                    creators["create voidstone"] = [](PlayerbotAI* ai) { return new CastCreateVoidstoneAction(ai); };
+                    creators["create wrathstone"] = [](PlayerbotAI* ai) { return new CastCreateWrathstoneAction(ai); };
+                    creators["use felstone"] = [](PlayerbotAI* ai) { return new CastUseFelstoneAction(ai); };
+                    creators["use voidstone"] = [](PlayerbotAI* ai) { return new CastUseVoidstoneAction(ai); };
+                    creators["use wrathstone"] = [](PlayerbotAI* ai) { return new CastUseWrathstoneAction(ai); };
+                    creators["dark harvest"] = [](PlayerbotAI* ai) { return new CastDarkHarvestAction(ai); };
+                    creators["power overwhelming"] = [](PlayerbotAI* ai) { return new CastPowerOverwhelmingAction(ai); };
+#endif
                     creators["spellstone"] = [](PlayerbotAI* ai) { return new UseSpellItemAction(ai, "spellstone"); };
                     creators["summon voidwalker"] = [](PlayerbotAI* ai) { return new CastSummonVoidwalkerAction(ai); };
                     creators["summon succubus"] = [](PlayerbotAI* ai) { return new CastSummonSuccubusAction(ai); };

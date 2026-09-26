@@ -435,6 +435,69 @@ namespace ai
         std::string GetTargetName() override { return "self target"; }
 	};
 
+#ifdef MANGOSBOT_ZERO
+	class CastCreateFelstoneAction : public CastSpellAction
+	{
+	public:
+		CastCreateFelstoneAction(PlayerbotAI* ai) : CastSpellAction(ai, "create felstone") {}
+        std::string GetTargetName() override { return "self target"; }
+	};
+
+	class CastCreateVoidstoneAction : public CastSpellAction
+	{
+	public:
+		CastCreateVoidstoneAction(PlayerbotAI* ai) : CastSpellAction(ai, "create voidstone") {}
+        std::string GetTargetName() override { return "self target"; }
+	};
+
+	class CastCreateWrathstoneAction : public CastSpellAction
+	{
+	public:
+		CastCreateWrathstoneAction(PlayerbotAI* ai) : CastSpellAction(ai, "create wrathstone") {}
+        std::string GetTargetName() override { return "self target"; }
+	};
+
+	class CastUseFelstoneAction : public CastSpellAction
+	{
+	public:
+		CastUseFelstoneAction(PlayerbotAI* ai) : CastSpellAction(ai, "use felstone") {}
+        std::string GetTargetName() override { return "self target"; }
+	};
+
+	class CastUseVoidstoneAction : public CastSpellAction
+	{
+	public:
+		CastUseVoidstoneAction(PlayerbotAI* ai) : CastSpellAction(ai, "use voidstone") {}
+        std::string GetTargetName() override { return "self target"; }
+	};
+
+	class CastUseWrathstoneAction : public CastSpellAction
+	{
+	public:
+		CastUseWrathstoneAction(PlayerbotAI* ai) : CastSpellAction(ai, "use wrathstone") {}
+        std::string GetTargetName() override { return "self target"; }
+	};
+
+	class CastDarkHarvestAction : public CastSpellAction
+	{
+	public:
+		CastDarkHarvestAction(PlayerbotAI* ai) : CastSpellAction(ai, "dark harvest") {}
+	};
+
+	class CastPowerOverwhelmingAction : public CastSpellAction
+	{
+	public:
+		CastPowerOverwhelmingAction(PlayerbotAI* ai) : CastSpellAction(ai, "power overwhelming") {}
+        std::string GetTargetName() override { return "pet target"; }
+
+        bool isUseful() override
+        {
+            Unit* pet = AI_VALUE(Unit*, "pet target");
+            return pet && pet->IsAlive() && CastSpellAction::isUseful();
+        }
+	};
+#endif
+
     class CastBanishAction : public CastSpellAction
     {
     public:
