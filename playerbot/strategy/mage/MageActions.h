@@ -72,6 +72,33 @@ namespace ai
 		CastFrostboltAction(PlayerbotAI* ai) : CastSpellAction(ai, "frostbolt") {}
 	};
 
+#ifdef MANGOSBOT_ZERO
+    class CastIciclesAction : public CastSpellAction
+    {
+    public:
+        CastIciclesAction(PlayerbotAI* ai) : CastSpellAction(ai, "icicles") {}
+
+        bool isPossible() override
+        {
+            if (!CastSpellAction::isPossible())
+                return false;
+            return AI_VALUE(uint8, "my attacker count") == 0;
+        }
+    };
+
+    class CastArcaneSurgeAction : public CastSpellAction
+    {
+    public:
+        CastArcaneSurgeAction(PlayerbotAI* ai) : CastSpellAction(ai, "arcane surge") {}
+    };
+
+    class CastArcaneRuptureAction : public CastSpellAction
+    {
+    public:
+        CastArcaneRuptureAction(PlayerbotAI* ai) : CastSpellAction(ai, "arcane rupture") {}
+    };
+#endif
+
 	class CastBlizzardAction : public CastSpellAction
 	{
 	public:

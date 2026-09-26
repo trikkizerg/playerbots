@@ -251,6 +251,11 @@ namespace ai
                     creators["arcane power"] = [](PlayerbotAI* ai) { return new CastArcanePowerAction(ai); };
                     creators["presence of mind"] = [](PlayerbotAI* ai) { return new CastPresenceOfMindAction(ai); };
                     creators["frostbolt"] = [](PlayerbotAI* ai) { return new CastFrostboltAction(ai); };
+#ifdef MANGOSBOT_ZERO
+                    creators["icicles"] = [](PlayerbotAI* ai) { return new CastIciclesAction(ai); };
+                    creators["arcane surge"] = [](PlayerbotAI* ai) { return new CastArcaneSurgeAction(ai); };
+                    creators["arcane rupture"] = [](PlayerbotAI* ai) { return new CastArcaneRuptureAction(ai); };
+#endif
                     creators["blizzard"] = [](PlayerbotAI* ai) { return new CastBlizzardAction(ai); };
                     creators["frost nova"] = [](PlayerbotAI* ai) { return new CastFrostNovaAction(ai); };
                     creators["arcane intellect"] = [](PlayerbotAI* ai) { return new CastArcaneIntellectAction(ai); };
