@@ -374,6 +374,12 @@ namespace ai
                     creators["revive"] = [](PlayerbotAI* ai) { return new CastReviveAction(ai); };
                     creators["barskin"] = [](PlayerbotAI* ai) { return new CastBarskinAction(ai); };
                     creators["barkskin"] = [](PlayerbotAI* ai) { return new CastBarskinAction(ai); };
+#ifdef MANGOSBOT_ZERO
+                    creators["savage bite"] = [](PlayerbotAI* ai) { return new CastSavageBiteAction(ai); };
+                    creators["barkskin (feral)"] = [](PlayerbotAI* ai) { return new CastBarkskinFeralAction(ai); };
+                    creators["reshift"] = [](PlayerbotAI* ai) { return new CastReshiftAction(ai); };
+                    creators["tree of life form"] = [](PlayerbotAI* ai) { return new CastTreeOfLifeFormAction(ai); };
+#endif
                     creators["lacerate"] = [](PlayerbotAI* ai) { return new CastLacerateAction(ai); };
                     creators["hurricane"] = [](PlayerbotAI* ai) { return new CastHurricaneAction(ai); };
                     creators["innervate"] = [](PlayerbotAI* ai) { return new CastInnervateAction(ai); };

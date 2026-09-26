@@ -256,6 +256,32 @@ namespace ai
         }
     };
 
+#ifdef MANGOSBOT_ZERO
+    class CastSavageBiteAction : public CastMeleeSpellAction
+    {
+    public:
+        CastSavageBiteAction(PlayerbotAI* ai) : CastMeleeSpellAction(ai, "savage bite") {}
+    };
+
+    class CastBarkskinFeralAction : public CastBuffSpellAction
+    {
+    public:
+        CastBarkskinFeralAction(PlayerbotAI* ai) : CastBuffSpellAction(ai, "barkskin (feral)") {}
+    };
+
+    class CastReshiftAction : public CastSpellAction
+    {
+    public:
+        CastReshiftAction(PlayerbotAI* ai) : CastSpellAction(ai, "reshift") {}
+    };
+
+    class CastTreeOfLifeFormAction : public CastBuffSpellAction
+    {
+    public:
+        CastTreeOfLifeFormAction(PlayerbotAI* ai) : CastBuffSpellAction(ai, "tree of life form") {}
+    };
+#endif
+
     class CastInnervateAction : public CastSpellTargetAction
     {
     public:
