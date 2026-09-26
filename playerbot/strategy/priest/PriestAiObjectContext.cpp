@@ -258,6 +258,13 @@ namespace ai
 
                     creators["power infusion"] = [](PlayerbotAI* ai) { return new CastPowerInfusionAction(ai); };
                     creators["inner focus"] = [](PlayerbotAI* ai) { return new CastInnerFocusAction(ai); };
+#ifdef MANGOSBOT_ZERO
+                    creators["pain spike"] = [](PlayerbotAI* ai) { return new CastPainSpikeAction(ai); };
+                    creators["searing shot"] = [](PlayerbotAI* ai) { return new CastSearingShotAction(ai); };
+                    creators["light of an'she"] = [](PlayerbotAI* ai) { return new CastLightOfAnshesAction(ai); };
+                    creators["enlighten"] = [](PlayerbotAI* ai) { return new CastEnlightenAction(ai); };
+                    creators["ascendance"] = [](PlayerbotAI* ai) { return new CastAscendanceAction(ai); };
+#endif
                     creators["shadow word: pain"] = [](PlayerbotAI* ai) { return new CastPowerWordPainAction(ai); };
                     creators["shadow word: pain on attacker"] = [](PlayerbotAI* ai) { return new CastPowerWordPainOnAttackerAction(ai); };
                     creators["devouring plague"] = [](PlayerbotAI* ai) { return new CastDevouringPlagueAction(ai); };

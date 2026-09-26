@@ -31,6 +31,29 @@ namespace ai
 
     // disc talents
     BUFF_ACTION(CastInnerFocusAction, "inner focus");
+
+#ifdef MANGOSBOT_ZERO
+    class CastPainSpikeAction : public CastSpellAction
+    {
+    public:
+        CastPainSpikeAction(PlayerbotAI* ai) : CastSpellAction(ai, "pain spike") {}
+    };
+
+    class CastSearingShotAction : public CastSpellAction
+    {
+    public:
+        CastSearingShotAction(PlayerbotAI* ai) : CastSpellAction(ai, "searing shot") {}
+    };
+
+    class CastLightOfAnshesAction : public CastHealingSpellAction
+    {
+    public:
+        CastLightOfAnshesAction(PlayerbotAI* ai) : CastHealingSpellAction(ai, "light of an'she") {}
+    };
+
+    BUFF_ACTION(CastEnlightenAction, "enlighten");
+    BUFF_ACTION(CastAscendanceAction, "ascendance");
+#endif
     // disc 2.4.3 talents
     BUFF_ACTION(CastPainSuppressionAction, "pain suppression");
     PROTECT_ACTION(CastPainSuppressionProtectAction, "pain suppression");
