@@ -394,6 +394,10 @@ namespace ai
                     creators["divine storm"] = [](PlayerbotAI* ai) { return new CastDivineStormAction(ai); };
                     creators["redemption"] = [](PlayerbotAI* ai) { return new CastRedemptionAction(ai); };
                     creators["crusader strike"] = [](PlayerbotAI* ai) { return new CastCrusaderStrikeAction(ai); };
+#ifdef MANGOSBOT_ZERO
+                    creators["holy strike"] = [](PlayerbotAI* ai) { return new CastHolyStrikeAction(ai); };
+                    creators["bulwark of the righteous"] = [](PlayerbotAI* ai) { return new CastBulwarkAction(ai); };
+#endif
                     creators["retribution aura"] = [](PlayerbotAI* ai) { return new CastRetributionAuraAction(ai); };
                     creators["shadow resistance aura"] = [](PlayerbotAI* ai) { return new CastShadowResistanceAuraAction(ai); };
                     creators["fire resistance aura"] = [](PlayerbotAI* ai) { return new CastFireResistanceAuraAction(ai); };

@@ -11,6 +11,7 @@ void TurtleClassStrategy::InitCombatTriggers(std::list<TriggerNode*>& triggers)
         break;
     case 2:
         triggers.push_back(new TriggerNode("timer", NextAction::array(0, new NextAction("bulwark of the righteous", ACTION_HIGH + 3), NULL)));
+        triggers.push_back(new TriggerNode("timer", NextAction::array(0, new NextAction("holy strike", ACTION_NORMAL + 3), NULL)));
         break;
     case 3:
         triggers.push_back(new TriggerNode("melee medium aoe", NextAction::array(0, new NextAction("carve", ACTION_NORMAL + 4), NULL)));

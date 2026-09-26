@@ -193,6 +193,20 @@ namespace ai
 		CastCrusaderStrikeAction(PlayerbotAI* ai) : CastMeleeSpellAction(ai, "crusader strike") {}
 	};
 
+#ifdef MANGOSBOT_ZERO
+	class CastHolyStrikeAction : public CastMeleeSpellAction
+	{
+	public:
+		CastHolyStrikeAction(PlayerbotAI* ai) : CastMeleeSpellAction(ai, "holy strike") {}
+	};
+
+	class CastBulwarkAction : public CastMeleeSpellAction
+	{
+	public:
+		CastBulwarkAction(PlayerbotAI* ai) : CastMeleeSpellAction(ai, "bulwark of the righteous") {}
+	};
+#endif
+
     class CastSealSpellAction : public CastBuffSpellAction
     {
     public:
