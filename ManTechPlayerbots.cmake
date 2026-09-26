@@ -22,7 +22,7 @@ endif()
 # the old vendor CMakeLists did the find_package and the linking. Both have to
 # come along, or the build fails deep inside a source file with
 # "'boost::filesystem' has not been declared".
-find_package(Boost 1.70 REQUIRED COMPONENTS thread filesystem system)
+find_package(Boost 1.70 REQUIRED COMPONENTS thread filesystem)
 
 # Both linkage modes: the static path folds this module into `modules`, the
 # dynamic path gives it a target of its own. That target is `mod_mod_playerbots`
@@ -69,8 +69,7 @@ foreach(PB_TARGET ${TORTOISE_CURRENT_MODULE_TARGET})
 
   target_link_libraries(${PB_TARGET}
     PRIVATE Boost::thread
-    PRIVATE Boost::filesystem
-    PRIVATE Boost::system)
+    PRIVATE Boost::filesystem)
 
   # PUBLIC, not PRIVATE: mod-dungeon-clear includes "playerbot/playerbot.h" and
   # friends. It used to get these transitively through
