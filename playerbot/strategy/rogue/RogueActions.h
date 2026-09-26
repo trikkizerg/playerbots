@@ -311,6 +311,40 @@ namespace ai
         }
     };
 
+#ifdef MANGOSBOT_ZERO
+    class CastShadowOfDeathAction : public CastMeleeSpellAction
+    {
+    public:
+        CastShadowOfDeathAction(PlayerbotAI* ai) : CastMeleeSpellAction(ai, "shadow of death") {}
+    };
+
+    class CastMarkForDeathAction : public CastMeleeSpellAction
+    {
+    public:
+        CastMarkForDeathAction(PlayerbotAI* ai) : CastMeleeSpellAction(ai, "mark for death") {}
+    };
+
+    class CastSmokeBombAction : public CastBuffSpellAction
+    {
+    public:
+        CastSmokeBombAction(PlayerbotAI* ai) : CastBuffSpellAction(ai, "smoke bomb") {}
+    };
+
+    class CastSurpriseAttackAction : public CastComboAction
+    {
+    public:
+        CastSurpriseAttackAction(PlayerbotAI* ai) : CastComboAction(ai, "surprise attack") {}
+    };
+
+    class CastNoxiousAssaultAction : public CastComboAction
+    {
+    public:
+        CastNoxiousAssaultAction(PlayerbotAI* ai) : CastComboAction(ai, "noxious assault") {}
+    };
+
+    BUFF_ACTION(CastDetectionAction, "detection");
+#endif
+
     class CastSinisterStrikeAction : public CastComboAction
     {
     public:

@@ -284,6 +284,14 @@ namespace ai
                     creators["rupture"] = [](PlayerbotAI* ai) { return new CastRuptureAction(ai); };
                     creators["slice and dice"] = [](PlayerbotAI* ai) { return new CastSliceAndDiceAction(ai); };
                     creators["eviscerate"] = [](PlayerbotAI* ai) { return new CastEviscerateAction(ai); };
+#ifdef MANGOSBOT_ZERO
+                    creators["surprise attack"] = [](PlayerbotAI* ai) { return new CastSurpriseAttackAction(ai); };
+                    creators["noxious assault"] = [](PlayerbotAI* ai) { return new CastNoxiousAssaultAction(ai); };
+                    creators["shadow of death"] = [](PlayerbotAI* ai) { return new CastShadowOfDeathAction(ai); };
+                    creators["mark for death"] = [](PlayerbotAI* ai) { return new CastMarkForDeathAction(ai); };
+                    creators["smoke bomb"] = [](PlayerbotAI* ai) { return new CastSmokeBombAction(ai); };
+                    creators["detection"] = [](PlayerbotAI* ai) { return new CastDetectionAction(ai); };
+#endif
     #ifdef MANGOSBOT_TWO
                     creators["hunger for blood"] = [](PlayerbotAI* ai) { return new CastHungerForBloodAction(ai); };
     #endif
