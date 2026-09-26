@@ -31,6 +31,38 @@ namespace ai
     SPELL_ACTION(CastLavaBurstAction, "lava burst");
 #endif
     BUFF_ACTION(CastGhostWolfAction, "ghost wolf");
+
+#ifdef MANGOSBOT_ZERO
+    class CastEarthshakerSlamAction : public CastMeleeSpellAction
+    {
+    public:
+        CastEarthshakerSlamAction(PlayerbotAI* ai) : CastMeleeSpellAction(ai, "earthshaker slam") {}
+    };
+
+    class CastEarthquakeAction : public CastSpellAction
+    {
+    public:
+        CastEarthquakeAction(PlayerbotAI* ai) : CastSpellAction(ai, "earthquake") {}
+    };
+
+    class CastLightningStrikeAction : public CastMeleeSpellAction
+    {
+    public:
+        CastLightningStrikeAction(PlayerbotAI* ai) : CastMeleeSpellAction(ai, "lightning strike") {}
+    };
+
+    class CastAncestralSwiftnessAction : public CastBuffSpellAction
+    {
+    public:
+        CastAncestralSwiftnessAction(PlayerbotAI* ai) : CastBuffSpellAction(ai, "ancestral swiftness") {}
+    };
+
+    class CastSpiritLinkAction : public BuffOnTankAction
+    {
+    public:
+        CastSpiritLinkAction(PlayerbotAI* ai) : BuffOnTankAction(ai, "spirit link") {}
+    };
+#endif
     class CastLesserHealingWaveAction : public CastHealingSpellAction 
     {
     public:

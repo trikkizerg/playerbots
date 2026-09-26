@@ -421,6 +421,13 @@ namespace ai
                     creators["maelstrom lightning"] = [](PlayerbotAI* ai) { return new CastMaelstromLightningAction(ai); };
     #endif
                     creators["stormstrike"] = [](PlayerbotAI* ai) { return new CastStormstrikeAction(ai); };
+#ifdef MANGOSBOT_ZERO
+                    creators["earthshaker slam"] = [](PlayerbotAI* ai) { return new CastEarthshakerSlamAction(ai); };
+                    creators["earthquake"] = [](PlayerbotAI* ai) { return new CastEarthquakeAction(ai); };
+                    creators["lightning strike"] = [](PlayerbotAI* ai) { return new CastLightningStrikeAction(ai); };
+                    creators["ancestral swiftness"] = [](PlayerbotAI* ai) { return new CastAncestralSwiftnessAction(ai); };
+                    creators["spirit link"] = [](PlayerbotAI* ai) { return new CastSpiritLinkAction(ai); };
+#endif
                     creators["lava lash"] = [](PlayerbotAI* ai) { return new CastLavaLashAction(ai); };
                     creators["fire nova"] = [](PlayerbotAI* ai) { return new CastFireNovaAction(ai); };
                     creators["ancestral spirit"] = [](PlayerbotAI* ai) { return new CastAncestralSpiritAction(ai); };
