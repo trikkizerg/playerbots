@@ -290,6 +290,7 @@ public:
     BUFF_ACTION(IntimidationAction, "intimidation");
     BUFF_ACTION(DeterrenceAction, "deterrence");
     MELEE_ACTION(CastCounterattackAction, "counterattack");
+    MELEE_ACTION(CastCarveAction, "carve");
     SNARE_ACTION(WyvernStingSnareAction, "wyvern sting");
     MELEE_ACTION(MongooseBiteAction, "mongoose bite");
 

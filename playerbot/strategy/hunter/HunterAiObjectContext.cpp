@@ -350,6 +350,7 @@ namespace ai
                     creators["feign death"] = [](PlayerbotAI* ai) { return new CastFeignDeathAction(ai); };
                     creators["wing clip"] = [](PlayerbotAI* ai) { return new CastWingClipAction(ai); };
                     creators["raptor strike"] = [](PlayerbotAI* ai) { return new CastRaptorStrikeAction(ai); };
+                    creators["carve"] = [](PlayerbotAI* ai) { return new CastCarveAction(ai); };
                     creators["feed pet"] = [](PlayerbotAI* ai) { return new FeedPetAction(ai); };
                     creators["bestial wrath"] = [](PlayerbotAI* ai) { return new CastBestialWrathAction(ai); };
                     creators["scare beast"] = [](PlayerbotAI* ai) { return new CastScareBeastAction(ai); };
