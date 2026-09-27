@@ -663,8 +663,14 @@ void PlayerbotAI::UpdateAI(uint32 elapsed, bool minimal)
     {
         if (HasCheat(BotCheatMask::health))
             bot->SetHealthPercent(100);
+        // Mana cheat: top up to 80% only when below 40%, so bots still manage
+        // mana like a real caster instead of running at infinite mana.
         if (HasCheat(BotCheatMask::mana) && bot->GetPowerType() == POWER_MANA)
-            bot->SetPower(POWER_MANA, bot->GetMaxPower(POWER_MANA));
+        {
+            uint32 const maxMana = bot->GetMaxPower(POWER_MANA);
+            if (maxMana && bot->GetPowerPercent(POWER_MANA) < 40.0f)
+                bot->SetPower(POWER_MANA, maxMana * 80 / 100);
+        }
         if (HasCheat(BotCheatMask::power) && bot->GetPowerType() != POWER_MANA)
             bot->SetPower(bot->GetPowerType(), bot->GetMaxPower(bot->GetPowerType()));
         if (HasCheat(BotCheatMask::cooldown))
